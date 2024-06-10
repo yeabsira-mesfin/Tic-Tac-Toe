@@ -15,7 +15,7 @@ const Player = ({initialName,symbol,isActive}) => {
         buttonCaption = 'Save'
     }
   return (
-    <li  className={isActive ? 'active': ''}>
+    <li  className={isActive ? 'active': undefined}>
       <span className="player">
         {isEditing ? (
             <span><input type="text" required value={playerName} onChange={handleChange}/></span>
