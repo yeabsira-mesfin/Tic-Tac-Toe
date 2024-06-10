@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-const Player = ({initialName,symbol}) => {
+const Player = ({initialName,symbol,isActive}) => {
     const [playerName,setPlayerName] = useState(initialName)
     const [isEditing,setIsEditing] = useState(false);
     function handlEditClick(){
@@ -15,7 +15,7 @@ const Player = ({initialName,symbol}) => {
         buttonCaption = 'Save'
     }
   return (
-    <li>
+    <li  className={isActive ? 'active': ''}>
       <span className="player">
         {isEditing ? (
             <span><input type="text" required value={playerName} onChange={handleChange}/></span>
